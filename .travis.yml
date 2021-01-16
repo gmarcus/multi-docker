@@ -1,3 +1,4 @@
+language: generic
 sudo: required
 services:
   - docker
@@ -16,7 +17,7 @@ after_success:
   # Log in to the docker CLI without prompting
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push -t gmarcus/multi-client
-  - docker push -t gmarcus/multi-nginx
-  - docker push -t gmarcus/multi-server
-  - docker push -t gmarcus/multi-worker
+  - docker push gmarcus/multi-client
+  - docker push gmarcus/multi-nginx
+  - docker push gmarcus/multi-server
+  - docker push gmarcus/multi-worker
